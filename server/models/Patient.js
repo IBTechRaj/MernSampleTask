@@ -3,29 +3,35 @@ const mongoose = require('mongoose')
 const PatientSchema = new mongoose.Schema({
   date: {
     type: Date,
+    default: Date.now,
     required: true
   },
   time: {
     type: DateTime,
     required: true
   },
-  author: {
-    type: String,
+  SecDiagnosis: {
+    type: Boolean,
     required: true
   },
-  description: {
+  AmbuAid: {
     type: String
   },
-  published_date: {
-    type: Date
+  HeparinLock: {
+    type: Boolean
   },
-  publisher: {
-    type: String
+  MentalStatus: {
+    type: Integer
   },
-  updated_date: {
-    type: Date,
-    default: Date.now
+  MedicationCondition: {
+    type: Integer
+  },
+  PhysicalRestraint: {
+    type: Boolean
+  },
+  FluidRestraint: {
+    type: Boolean
   }
 })
 
-module.exports = Book = mongoose.model('book', BookSchema)
+module.exports = Patient = mongoose.model('patient', PatientSchema)
