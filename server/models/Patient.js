@@ -1,36 +1,35 @@
 const mongoose = require('mongoose')
 
 const PatientSchema = new mongoose.Schema({
-  FormDate: {
-    type: Date,
-    default: Date.now,
+  formDate: {
+    type: String,
     required: true
   },
-  FormTime: {
-    type: DateTime,
+  formTime: {
+    type: String,
     required: true
   },
-  SecDiagnosis: {
-    type: Boolean,
+  secDiag: {
+    type: String,
     required: true
   },
-  AmbuAid: {
+  ambuAid: {
     type: String
   },
-  HeparinLock: {
-    type: Boolean
+  heparinLock: {
+    type: String
   },
-  MentalStatus: {
-    type: Integer
+  mentalStatus: {
+    type: String
   },
-  MedicationCondition: {
-    type: Integer
+  medicatnCondition: {
+    type: String
   },
-  PhysicalRestraint: {
-    type: Boolean
+  physicalRestraint: {
+    type: String
   },
-  FluidRestraint: {
-    type: Boolean
+  fluidRestraint: {
+    type: String
   }
 })
 

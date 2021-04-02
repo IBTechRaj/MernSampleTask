@@ -37,32 +37,37 @@ function App() {
   const [patientDetails, setPatientDetails] = useState([])
 
   const addPatient = () => {
-    Axios.post('http://localhost:3001/create', {
+    Axios.post('http://localhost:8082/api/patients', {
       formDate: entryDate,
       formTime: entryTime,
       secDiag: secDiag,
       ambuAid: ambuAid,
       heparinLock: heparinLock,
-      medicatnCondition: medicatnCondition,
       mentalStatus: mentalStatus,
+      medicatnCondition: medicatnCondition,
       physicalRestraint: physicalRestraint,
       fluidRestraint: fluidRestraint
-    }).then(() => {
-      setPatientDetails([
-        ...patientDetails,
-        {
-          formDate: entryDate,
-          formTime: entryTime,
-          secDiag: secDiag,
-          ambuAid: ambuAid,
-          heparinLock: heparinLock,
-          medicatnCondition: medicatnCondition,
-          mentalStatus: mentalStatus,
-          physicalRestraint: physicalRestraint,
-          fluidRestraint: fluidRestraint
-        }
-      ])
     })
+      .then(() => {
+        setPatientDetails([
+          ...patientDetails,
+          {
+            formDate: entryDate,
+            formTime: entryTime,
+            secDiag: secDiag,
+            ambuAid: ambuAid,
+            heparinLock: heparinLock,
+            mentalStatus: mentalStatus,
+            medicatnCondition: medicatnCondition,
+            physicalRestraint: physicalRestraint,
+            fluidRestraint: fluidRestraint
+          }
+        ])
+      })
+      .catch(err => {
+        console.log(err)
+        console.log('Error in Create Details!')
+      })
   }
   // const clearPatient = () => {}
   // const getPatientDetails = () => {
@@ -101,7 +106,7 @@ function App() {
             }}
           >
             {AmbulatoryAid.map(ambaid => (
-              <option key={AmbulatoryAid} value={AmbulatoryAid}>
+              <option key={ambaid} value={ambaid}>
                 {ambaid}
               </option>
             ))}
@@ -151,7 +156,7 @@ function App() {
           </select>
           <label>Physical Restraint:</label>
           <select
-            name='physicalRestraint'
+            type='string'
             onChange={event => {
               setPhysicalRestraint(event.target.value)
             }}

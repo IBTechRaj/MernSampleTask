@@ -15,13 +15,13 @@ router.get('/', function (req, res) {
 // @route GET api/patients
 // @description Get all patients
 // @access Public
-router.get('/patients', (req, res) => {
-  Patient.find()
-    .then(patients => res.json(patients))
-    .catch(err =>
-      res.status(404).json({ noPatientsFound: 'No Patients found' })
-    )
-})
+// router.get('/patients', (req, res) => {
+//   Patient.find()
+//     .then(patients => res.json(patients))
+//     .catch(err =>
+//       res.status(404).json({ noPatientsFound: 'No Patients found' })
+//     )
+// })
 
 // @route GET api/books/:id
 // @description Get single book by id
@@ -35,11 +35,14 @@ router.get('/patients', (req, res) => {
 // @route GET api/books
 // @description add/save book
 // @access Public
-// router.post('/books', (req, res) => {
-//   Book.create(req.body)
-//     .then(book => res.json({ msg: 'Book added successfully' }))
-//     .catch(err => res.status(400).json({ error: 'Unable to add this book' }))
-// })
+router.post('/patients', (req, res) => {
+  console.log(req.body)
+  Patient.create(req.body)
+    .then(patient => res.json({ msg: 'Patient Details added successfully' }))
+    .catch(err =>
+      res.status(400).json({ error: 'Unable to add patient details' })
+    )
+})
 
 // @route GET api/books/:id
 // @description Update book
