@@ -23,8 +23,8 @@ function App() {
   const entryDate =
     today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
   console.log('dt', entryTime, entryDate)
-  const [currentDate, setCurrentDate] = useState(entryDate)
-  const [currentTime, setCurrentTime] = useState(entryTime)
+  // const [currentDate, setCurrentDate] = useState(entryDate)
+  // const [currentTime, setCurrentTime] = useState(entryTime)
   const [secDiag, setSecDiag] = useState(0)
   const [ambuAid, setAmbuAid] = useState('')
   const [heparinLock, setHeparinLock] = useState(0)
@@ -38,6 +38,8 @@ function App() {
 
   const addPatient = () => {
     Axios.post('http://localhost:3001/create', {
+      formDate: entryDate,
+      formTime: entryTime,
       secDiag: secDiag,
       ambuAid: ambuAid,
       heparinLock: heparinLock,
@@ -49,6 +51,8 @@ function App() {
       setPatientDetails([
         ...patientDetails,
         {
+          formDate: entryDate,
+          formTime: entryTime,
           secDiag: secDiag,
           ambuAid: ambuAid,
           heparinLock: heparinLock,
@@ -71,22 +75,10 @@ function App() {
     <div className='App'>
       <div className='row row-col-12 p-5 m-5'>
         <div className='information'>
-          <label>Date:</label>
-          <input
-            type='number'
-            // disabled={{ entryDate }}
-            onChange={event => {
-              setCurrentDate(entryDate)
-            }}
-          />
-          <label>Time:</label>
-          <input
-            type='string'
-            // disabled={{ entryTime }}
-            onChange={event => {
-              setCurrentTime(entryTime)
-            }}
-          />
+          <label>Date {entryDate}</label>
+
+          <label>Time {entryTime}</label>
+
           <label>Secondary Diagnosis:</label>
           <select
             type='string'
@@ -191,13 +183,13 @@ function App() {
               </option>
             ))}
           </select>
-          <button onClick={addPatient}>Submit</button>
+          <button onClick={addPatient}>Save</button>
         </div>
       </div>
-      <div className='employees'>
+      <div className='patients'>
         {/* <button onClick={clearPatient}>Reset</button> */}
 
-        {patientDetails.map((val, key) => {
+        {/* {patientDetails.map((val, key) => {
           return (
             <div className='employee'>
               <div>
@@ -207,34 +199,10 @@ function App() {
                 <h3>Position: {val.position}</h3>
                 <h3>Wage: {val.wage}</h3>
               </div>
-              {/* <div>
-                <input
-                  type='text'
-                  placeholder='2000...'
-                  onChange={event => {
-                    setNewWage(event.target.value)
-                  }}
-                /> */}
-              {/* <button
-                  onClick={() => {
-                    updateEmployeeWage(val.id)
-                  }}
-                >
-                  {' '}
-                  Update
-                </button>
-
-                <button
-                  onClick={() => {
-                    deleteEmployee(val.id)
-                  }}
-                >
-                  Delete
-                </button> */}
-              {/* </div> */}
+              
             </div>
           )
-        })}
+        })} */}
       </div>
     </div>
   )

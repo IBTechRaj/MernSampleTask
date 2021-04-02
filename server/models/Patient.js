@@ -1,12 +1,12 @@
 const mongoose = require('mongoose')
 
 const PatientSchema = new mongoose.Schema({
-  date: {
+  FormDate: {
     type: Date,
     default: Date.now,
     required: true
   },
-  time: {
+  FormTime: {
     type: DateTime,
     required: true
   },
