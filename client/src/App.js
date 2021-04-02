@@ -17,6 +17,7 @@ const MentalStatus = ['Forgets Limitations', 'Oriented to Own Ability']
 const Medication = ['Under Sedation/Anesthasia', 'None']
 
 function App() {
+  // const textInput = useRef()
   const today = new Date()
   const entryTime =
     today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds()
@@ -48,26 +49,51 @@ function App() {
       physicalRestraint: physicalRestraint,
       fluidRestraint: fluidRestraint
     })
+
       .then(() => {
-        setPatientDetails([
-          ...patientDetails,
-          {
-            formDate: entryDate,
-            formTime: entryTime,
-            secDiag: secDiag,
-            ambuAid: ambuAid,
-            heparinLock: heparinLock,
-            mentalStatus: mentalStatus,
-            medicatnCondition: medicatnCondition,
-            physicalRestraint: physicalRestraint,
-            fluidRestraint: fluidRestraint
-          }
-        ])
+        getEmployees()
       })
+      // .then(() => {
+      //   setPatientDetails([
+      //     ...patientDetails,
+      //     {
+      //       formDate: entryDate,
+      //       formTime: entryTime,
+      //       secDiag: secDiag,
+      //       ambuAid: ambuAid,
+      //       heparinLock: heparinLock,
+      //       mentalStatus: mentalStatus,
+      //       medicatnCondition: medicatnCondition,
+      //       physicalRestraint: physicalRestraint,
+      //       fluidRestraint: fluidRestraint
+      //     }
+      //   ])
+      // })
       .catch(err => {
         console.log(err)
         console.log('Error in Create Details!')
       })
+  }
+
+  const getEmployees = () => {
+    Axios.get('http://localhost:8082/api/patients').then(response => {
+      setPatientDetails(response.data)
+    })
+  }
+
+  // const clearPatient = () => {
+  //   textInput.current.value = ''
+  // }
+  const clearPatient = () => {
+    // setFormDate('')
+    // setFormTime('')
+    setSecDiag('')
+    setAmbuAid('')
+    setHeparinLock('')
+    setMentalStatus('')
+    setMedicatnCondition('')
+    setPhysicalRestraint('')
+    setFluidRestraint('')
   }
   // const clearPatient = () => {}
   // const getPatientDetails = () => {
@@ -79,19 +105,22 @@ function App() {
   return (
     <div className='App'>
       <div className='row row-col-12 p-5 m-5'>
+        {/* <form id='patient-form' onSubmit={addPatient}> */}
         <div className='information'>
-          <label>Date {entryDate}</label>
-
-          <label>Time {entryTime}</label>
-
+          <div className='form-control'>
+            <label>Date {entryDate}</label>
+          </div>
+          <div className='form-control'>
+            <label>Time {entryTime}</label>
+          </div>
           <label>Secondary Diagnosis:</label>
           <select
             type='string'
+            // ref={textInput}
             onChange={event => {
               setSecDiag(event.target.value)
             }}
           >
-            <option></option>
             {YesNo.map(yesno => (
               <option key={yesno} value={yesno}>
                 {yesno}
@@ -101,6 +130,7 @@ function App() {
           <label>Ambulatory Aid:</label>
           <select
             type='string'
+            // ref={textInput}
             onChange={event => {
               setAmbuAid(event.target.value)
             }}
@@ -114,11 +144,11 @@ function App() {
           <label>Heparin Lock:</label>
           <select
             type='string'
+            // ref={textInput}
             onChange={event => {
               setHeparinLock(event.target.value)
             }}
           >
-            <option></option>
             {YesNo.map(yesno => (
               <option key={yesno} value={yesno}>
                 {yesno}
@@ -129,11 +159,11 @@ function App() {
           <label>Mental Status:</label>
           <select
             type='string'
+            // ref={textInput}
             onChange={event => {
               setMentalStatus(event.target.value)
             }}
           >
-            <option></option>
             {MentalStatus.map(ment => (
               <option key={ment} value={ment}>
                 {ment}
@@ -143,11 +173,11 @@ function App() {
           <label>Medication Condition:</label>
           <select
             type='string'
+            // ref={textInput}
             onChange={event => {
               setMedicatnCondition(event.target.value)
             }}
           >
-            <option></option>
             {Medication.map(medic => (
               <option key={medic} value={medic}>
                 {medic}
@@ -157,31 +187,26 @@ function App() {
           <label>Physical Restraint:</label>
           <select
             type='string'
+            // ref={textInput}
             onChange={event => {
               setPhysicalRestraint(event.target.value)
             }}
           >
-            <option></option>
             {YesNo.map(yesno => (
               <option key={yesno} value={yesno}>
                 {yesno}
               </option>
             ))}
           </select>
-          {/* <input
-          type='number'
-          onChange={event => {
-            setPhysicalRestraint(event.target.value)
-          }}
-        /> */}
+
           <label>Fluid Restraint:</label>
           <select
             type='string'
+            // ref={textInput}
             onChange={event => {
               setFluidRestraint(event.target.value)
             }}
           >
-            <option></option>
             {YesNo.map(yesno => (
               <option key={yesno} value={yesno}>
                 {yesno}
@@ -189,25 +214,31 @@ function App() {
             ))}
           </select>
           <button onClick={addPatient}>Save</button>
+          {/* <button type='submit'>Save</button> */}
+          <button onClick={clearPatient}>Reset</button>
         </div>
+        {/* </form> */}
       </div>
       <div className='patients'>
         {/* <button onClick={clearPatient}>Reset</button> */}
 
-        {/* {patientDetails.map((val, key) => {
+        {patientDetails.map((val, key) => {
           return (
             <div className='employee'>
               <div>
-                <h3>Name: {val.name}</h3>
-                <h3>Age: {val.age}</h3>
-                <h3>Country: {val.country}</h3>
-                <h3>Position: {val.position}</h3>
-                <h3>Wage: {val.wage}</h3>
+                <h3>formDate: {val.entryDate}</h3>
+                <h3>formTime: {val.entryTime}</h3>
+                <h3>secDiag: {val.secDiag}</h3>
+                <h3>ambuAid: {val.ambuAid}</h3>
+                <h3>heparinLock: {val.heparinLock}</h3>
+                <h3>mentalStatus: {val.mentalStatus}</h3>
+                <h3>medicatnCondition: {val.medicatnCondition}</h3>
+                <h3>physicalRestraint: {val.physicalRestraint}</h3>
+                <h3>fluidRestraint: {val.fluidRestraint}</h3>
               </div>
-              
             </div>
           )
-        })} */}
+        })}
       </div>
     </div>
   )
