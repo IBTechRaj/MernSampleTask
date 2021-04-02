@@ -81,12 +81,7 @@ function App() {
     })
   }
 
-  // const clearPatient = () => {
-  //   textInput.current.value = ''
-  // }
   const clearPatient = () => {
-    // setFormDate('')
-    // setFormTime('')
     setSecDiag('')
     setAmbuAid('')
     setHeparinLock('')
