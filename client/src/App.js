@@ -26,15 +26,12 @@ const PhysScore = [10, 0]
 const FluidScore = [10, 0]
 
 function App() {
-  // const textInput = useRef()
   const today = new Date()
   const entryTime =
     today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds()
   const entryDate =
     today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
   console.log('dt', entryTime, entryDate)
-  // const [currentDate, setCurrentDate] = useState(entryDate)
-  // const [currentTime, setCurrentTime] = useState(entryTime)
   const [secDiag, setSecDiag] = useState(0)
   const [ambuAid, setAmbuAid] = useState('')
   const [heparinLock, setHeparinLock] = useState(0)
@@ -62,22 +59,6 @@ function App() {
       .then(() => {
         getEmployees()
       })
-      // .then(() => {
-      //   setPatientDetails([
-      //     ...patientDetails,
-      //     {
-      //       formDate: entryDate,
-      //       formTime: entryTime,
-      //       secDiag: secDiag,
-      //       ambuAid: ambuAid,
-      //       heparinLock: heparinLock,
-      //       mentalStatus: mentalStatus,
-      //       medicatnCondition: medicatnCondition,
-      //       physicalRestraint: physicalRestraint,
-      //       fluidRestraint: fluidRestraint
-      //     }
-      //   ])
-      // })
       .catch(err => {
         console.log(err)
         console.log('Error in Create Details!')
@@ -89,7 +70,6 @@ function App() {
       .then(response => {
         console.log(response.data)
         setPatientDetails(response.data)
-        // setPatientScores(patientDetails)
       })
       .catch(err => {
         console.log(err)
@@ -97,11 +77,6 @@ function App() {
       })
   }
 
-  // const setPatientScores( patientDetails ){
-
-  //   patientDetails.map( ( p, key ) => {
-
-  //   } )
   const clearPatient = () => {
     setSecDiag('')
     setAmbuAid('')
@@ -111,19 +86,9 @@ function App() {
     setPhysicalRestraint('')
     setFluidRestraint('')
   }
-  // const clearPatient = () => {}
-  // const getPatientDetails = () => {
-  //     Axios.get('http://localhost:3001/patients').then(response => {
-  //   setPatientDetails(response.data)
-  //     })
-  // }
 
   return (
     <div className='container my-5'>
-      {/* <ControlledInputs1 /> */}
-      {/* <ControlledInputs2 /> */}
-      {/* <Inputs3 /> */}
-      {/* <div className='row  '> */}
       <div className='row col-md-12 my-5'>
         <div className='col-md-3'></div>
         <div className='col-md-9'>
@@ -199,7 +164,6 @@ function App() {
             backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
-            // padding: '0 10',
             fontSize: 10
           }}
         >
@@ -212,7 +176,6 @@ function App() {
             backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
-            // padding: '0 10',
             fontSize: 10
           }}
         >
@@ -225,7 +188,6 @@ function App() {
             backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
-            // padding: '0 10',
             fontSize: 10
           }}
         >
@@ -238,7 +200,6 @@ function App() {
             backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
-            // padding: '0 10 ',
             fontSize: 10
           }}
         >
@@ -251,7 +212,6 @@ function App() {
             backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
-            // padding: '0 10',
             fontSize: 10
           }}
         >
@@ -259,6 +219,159 @@ function App() {
         </div>
         {/* </div> */}
       </div>
+
+      <div className='row mx-n5 py-2'>
+        <div
+          className=' col-md-2  text-center text-uppercase'
+          style={{
+            height: '1 rem',
+            backgroundColor: 'gray',
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: 10
+          }}
+        >
+          nursing checklist
+        </div>
+        <div
+          className=' col-md-2 px-3  text-center text-uppercase'
+          style={{
+            height: '2 rem',
+            backgroundColor: 'gray',
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: 10
+          }}
+        >
+          nursing goals
+        </div>
+        <div
+          className=' col-md-2  px-3 text-center text-uppercase '
+          style={{
+            height: '2 rem',
+            backgroundColor: 'gray',
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: 10
+          }}
+        >
+          interdisciplinary
+        </div>
+        <div
+          className=' col-md-2  px-3 text-center text-uppercase'
+          style={{
+            height: '2 rem',
+            backgroundColor: 'gray',
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: 10
+          }}
+        >
+          food & nutrition
+        </div>
+        <div
+          className=' col-md-2 px-3 text-center text-uppercase'
+          style={{
+            height: '2 rem',
+            backgroundColor: 'gray',
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: 10
+          }}
+        >
+          physiotherapy
+        </div>
+        <div
+          className=' col-md-2  px-3 text-center text-uppercase'
+          style={{
+            height: '2 rem',
+            backgroundColor: 'gray',
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: 10
+          }}
+        >
+          in house pharmac
+        </div>
+        {/* </div> */}
+      </div>
+
+      <div className='row mx-n5'>
+        <div
+          className=' col-md-2  text-center text-uppercase'
+          style={{
+            height: '1 rem',
+            backgroundColor: 'gray',
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: 10
+          }}
+        >
+          doctors notes
+        </div>
+        <div
+          className=' col-md-2 px-3  text-center text-uppercase'
+          style={{
+            height: '2 rem',
+            backgroundColor: 'gray',
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: 10
+          }}
+        >
+          hands off commun
+        </div>
+        <div
+          className=' col-md-2  px-3 text-center text-uppercase '
+          style={{
+            height: '2 rem',
+            backgroundColor: 'gray',
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: 10
+          }}
+        >
+          critical condition con
+        </div>
+        <div
+          className=' col-md-2  px-3 text-center text-uppercase'
+          style={{
+            height: '2 rem',
+            backgroundColor: 'gray',
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: 10
+          }}
+        >
+          patient education
+        </div>
+        <div
+          className=' col-md-2 px-3 text-center text-uppercase'
+          style={{
+            height: '2 rem',
+            backgroundColor: 'gray',
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: 10
+          }}
+        >
+          patient discharge
+        </div>
+        <div
+          className=' col-md-2  px-3 text-center text-uppercase'
+          style={{
+            height: '2 rem',
+            backgroundColor: 'gray',
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: 10
+          }}
+        >
+          escalation & alert
+        </div>
+        {/* </div> */}
+      </div>
+
       <div className='row row-col-12 text-uppercase text-center my-3'>
         <div
           style={{
@@ -275,7 +388,6 @@ function App() {
 
       <div className='row row-col-12  text-uppercase'>
         <form className='container' id='patient-form'>
-          {/* <div className='information'> */}
           <div className='row my-3'>
             <div className=' col-md-1'>
               <label htmlFor='date'>Date</label>
@@ -283,7 +395,6 @@ function App() {
             <div className=' col-md-2'>
               {
                 <input
-                  // type='email'
                   className='form-control'
                   id='date'
                   defaultValue={entryDate}
@@ -296,7 +407,6 @@ function App() {
             <div className=' col-md-2'>
               {
                 <input
-                  // type='email'
                   className='form-control'
                   id='time'
                   defaultValue={entryTime}
@@ -312,7 +422,6 @@ function App() {
               <select
                 type='string'
                 id='setDiag'
-                // ref={textInput}
                 onChange={event => {
                   setSecDiag(event.target.value)
                 }}
@@ -331,7 +440,6 @@ function App() {
               <select
                 type='string'
                 id='ambuAid'
-                // ref={textInput}
                 onChange={event => {
                   setAmbuAid(event.target.value)
                 }}
@@ -350,7 +458,6 @@ function App() {
               <select
                 type='string'
                 id='heparinLock'
-                // ref={textInput}
                 onChange={event => {
                   setHeparinLock(event.target.value)
                 }}
@@ -371,7 +478,6 @@ function App() {
               <select
                 type='string'
                 id='mentalStatus'
-                // ref={textInput}
                 onChange={event => {
                   setMentalStatus(event.target.value)
                 }}
@@ -390,7 +496,6 @@ function App() {
               <select
                 type='string'
                 id='medicatnCondition'
-                // ref={textInput}
                 onChange={event => {
                   setMedicatnCondition(event.target.value)
                 }}
@@ -409,7 +514,6 @@ function App() {
               <select
                 type='string'
                 id='physicalRestraint'
-                // ref={textInput}
                 onChange={event => {
                   setPhysicalRestraint(event.target.value)
                 }}
@@ -430,7 +534,6 @@ function App() {
               <select
                 type='string'
                 id='fluidRestraint'
-                // ref={textInput}
                 onChange={event => {
                   setFluidRestraint(event.target.value)
                 }}
@@ -455,8 +558,6 @@ function App() {
             </div>
             <div className=' col-md-2 '></div>
             <div className=' col-md-2 '>
-              {/* <button type='submit'>Save</button> */}
-
               <button
                 type='button'
                 className='btn btn-warning '
@@ -471,7 +572,6 @@ function App() {
         </form>
       </div>
       <div className='patients'>
-        {/* <button onClick={clearPatient}>Reset</button> */}
         <p
           className='text-center text-uppercase'
           style={{ fontWeight: 'bold' }}
@@ -485,9 +585,6 @@ function App() {
             style={{
               height: '2 rem',
               backgroundColor: 'lightgrey'
-              // fontSize: '10px'
-              // fontWeight: 'bold'
-              // color: 'white'
             }}
           >
             {' '}
@@ -577,25 +674,10 @@ function App() {
         {patientDetails.map((val, key) => {
           return (
             <div className='employee'>
-              {/* <div>
-                <h3>formDate: {val.entryDate}</h3>
-                <h3>formTime: {val.entryTime}</h3>
-                <h3>secDiag: {val.secDiag}</h3>
-                <h3>ambuAid: {val.ambuAid}</h3>
-                <h3>heparinLock: {val.heparinLock}</h3>
-                <h3>mentalStatus: {val.mentalStatus}</h3>
-                <h3>medicatnCondition: {val.medicatnCondition}</h3>
-                <h3>physicalRestraint: {val.physicalRestraint}</h3>
-                <h3>fluidRestraint: {val.fluidRestraint}</h3>
-              </div> */}
               <div className='row row-col-12 text-uppercase text-center'>
                 <div
                   style={{
                     height: '2 rem'
-                    // backgroundColor: 'lightgrey'
-                    // fontSize: '10px'
-                    // fontWeight: 'bold'
-                    // color: 'white'
                   }}
                 >
                   {' '}
@@ -603,7 +685,6 @@ function App() {
                     className=' border border-dark'
                     style={{
                       float: 'left',
-                      // border: '1px  ',
                       width: '10%'
                     }}
                   >
@@ -613,7 +694,6 @@ function App() {
                     className=' border border-dark'
                     style={{
                       float: 'left',
-                      // border: '1px  ',
                       width: '10%'
                     }}
                   >
@@ -623,19 +703,15 @@ function App() {
                     className=' border border-dark'
                     style={{
                       float: 'left',
-                      // border: '1px  ',
                       width: '20%'
                     }}
                   >
-                    {/* {val.secDiag} */}
-
                     {SecondScore[secDiag.indexOf(val.secDiag)]}
                   </div>
                   <div
                     className=' border border-dark'
                     style={{
                       float: 'left',
-                      // border: '1px  ',
                       width: '10%'
                     }}
                   >
@@ -645,7 +721,6 @@ function App() {
                     className=' border border-dark'
                     style={{
                       float: 'left',
-                      // border: '1px  ',
                       width: '10%'
                     }}
                   >
@@ -655,7 +730,6 @@ function App() {
                     className=' border border-dark'
                     style={{
                       float: 'left',
-                      // border: '1px  ',
                       width: '10%'
                     }}
                   >
@@ -665,7 +739,6 @@ function App() {
                     className=' border border-dark'
                     style={{
                       float: 'left',
-                      // border: '1px  ',
                       width: '10%'
                     }}
                   >
@@ -679,7 +752,6 @@ function App() {
                     className=' border border-dark'
                     style={{
                       float: 'left',
-                      // border: '1px  ',
                       width: '10%'
                     }}
                   >
@@ -693,27 +765,13 @@ function App() {
                     className=' border border-dark'
                     style={{
                       float: 'left',
-                      // border: '1px  ',
                       width: '10%'
                     }}
                   >
                     {FluidScore[fluidRestraint.indexOf(val.fluidRestraint)]}
-                    {/* {console.log(val.fluidRestraint)} */}
-                    {/* {console.log(FluidScore)} */}
                   </div>
                 </div>
               </div>
-              {/* <div>
-                <h3>formDate: {val.entryDate}</h3>
-                <h3>formTime: {val.entryTime}</h3>
-                <h3>secDiag: {val.secDiag}</h3>
-                <h3>ambuAid: {val.ambuAid}</h3>
-                <h3>heparinLock: {val.heparinLock}</h3>
-                <h3>mentalStatus: {val.mentalStatus}</h3>
-                <h3>medicatnCondition: {val.medicatnCondition}</h3>
-                <h3>physicalRestraint: {val.physicalRestraint}</h3>
-                <h3>fluidRestraint: {val.fluidRestraint}</h3>
-              </div> */}
             </div>
           )
         })}
