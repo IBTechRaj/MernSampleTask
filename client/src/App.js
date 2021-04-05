@@ -119,13 +119,55 @@ function App() {
   // }
 
   return (
-    <div className='container'>
+    <div className='container my-5'>
       {/* <ControlledInputs1 /> */}
       {/* <ControlledInputs2 /> */}
       {/* <Inputs3 /> */}
       {/* <div className='row  '> */}
+      <div className='row col-md-12 my-5'>
+        <div className='col-md-3'></div>
+        <div className='col-md-9'>
+          <h5>
+            1.1 IP-MORSE FALL ASSESSMENT : The system shall allow the SN to
+            input
+          </h5>
+          <h5>Morse Fall Risk Assessment Data</h5>
+          <h5> i. Date</h5>
+          <h5> ii. Time</h5>{' '}
+          <h5>iii. History of Falls( Yes / No) Yes =25, No=0</h5>
+          <h5> iv. Secondary Diagnosis (Yes / No) Yes=15. No = 0 </h5>
+          <h5>
+            v. Ambulatory Aid ( Furniture / Crutches /Walker / Cane / None / Bed
+            Rest/ wheel chair/ Nurse) Furniture = 30, Crutches/walker/cane = 15,
+            others =0
+          </h5>
+          <h5>vi. Heparin Lock ( Yes /No) Yes =20, No =0</h5>
+          <h5>
+            {' '}
+            vii. Gait / Transferring (Impaired / Weak / Normal / Bed Rest /
+            Immobile) Impaired = 20, weak=10, others =0
+          </h5>{' '}
+          <h5>
+            {' '}
+            viii. Mental Status ( Forgets Limitations / Oriented to Own ability)
+            Forgets = 15, own =0
+          </h5>{' '}
+          <h5>
+            {' '}
+            ix. Medication / Other condition ( Under sedation or Anesthesia /
+            None ) Sedation =20 , None = 0
+          </h5>{' '}
+          <h5> x. Physical Restraint ( Yes / No ) Yes =10/ No=0</h5>
+          <h5> xi. Fluid Restrictions ( Yes / No) Yes=10, No=0</h5>
+          <h5>
+            {' '}
+            Based on the response, the score should be calculated and displayed
+            in reports; Alert if the score is 45 or above
+          </h5>
+        </div>
+      </div>
       <div
-        className='row '
+        className='row my-3'
         style={{
           height: '2 rem',
           backgroundColor: 'red',
@@ -137,15 +179,14 @@ function App() {
         {' '}
         P.Id: 21CR-0123 NAVEEN YADAV IP -Bed #21
       </div>
-      <div className='row '>
+      <div className='row mx-n5'>
         <div
-          className=' col-md-2 px-3 text-center text-uppercase'
+          className=' col-md-2  text-center text-uppercase'
           style={{
             height: '1 rem',
             backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
-            // padding: '0 10',
             fontSize: 10
           }}
         >
@@ -218,7 +259,7 @@ function App() {
         </div>
         {/* </div> */}
       </div>
-      <div className='row row-col-12 text-uppercase text-center'>
+      <div className='row row-col-12 text-uppercase text-center my-3'>
         <div
           style={{
             height: '2 rem',
