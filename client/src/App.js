@@ -79,6 +79,13 @@ function App() {
   }
 
   const clearPatient = () => {
+    document.getElementById('secDiag').value = ''
+    document.getElementById('ambuAid').value = ''
+    document.getElementById('heparinLock').value = ''
+    document.getElementById('mentalStatus').value = ''
+    document.getElementById('medicatnCondition').value = ''
+    document.getElementById('physicalRestraint').value = ''
+    document.getElementById('fluidRestraint').value = ''
     setSecDiag('')
     setAmbuAid('')
     setHeparinLock('')
@@ -417,12 +424,14 @@ function App() {
           </div>
           <div className='row my-3'>
             <div className=' col-md-2'>
-              <label htmlFor='setDiag'>Secondary Diagnosis:</label>
+              <label htmlFor='secDiag'>Secondary Diagnosis:</label>
             </div>
-            <div className=' col-md-2' style={{ width: '8 rem' }}>
+            <div className=' col-md-2'>
               <select
                 type='string'
-                id='setDiag'
+                id='secDiag'
+                style={{ width: '150px' }}
+                // width='100px'
                 onChange={event => {
                   setSecDiag(event.target.value)
                 }}
@@ -441,6 +450,7 @@ function App() {
               <select
                 type='string'
                 id='ambuAid'
+                style={{ width: '150px' }}
                 onChange={event => {
                   setAmbuAid(event.target.value)
                 }}
@@ -459,6 +469,7 @@ function App() {
               <select
                 type='string'
                 id='heparinLock'
+                style={{ width: '150px' }}
                 onChange={event => {
                   setHeparinLock(event.target.value)
                 }}
@@ -479,6 +490,7 @@ function App() {
               <select
                 type='string'
                 id='mentalStatus'
+                style={{ width: '150px' }}
                 onChange={event => {
                   setMentalStatus(event.target.value)
                 }}
@@ -497,6 +509,7 @@ function App() {
               <select
                 type='string'
                 id='medicatnCondition'
+                style={{ width: '150px' }}
                 onChange={event => {
                   setMedicatnCondition(event.target.value)
                 }}
@@ -515,6 +528,7 @@ function App() {
               <select
                 type='string'
                 id='physicalRestraint'
+                style={{ width: '150px' }}
                 onChange={event => {
                   setPhysicalRestraint(event.target.value)
                 }}
@@ -535,6 +549,7 @@ function App() {
               <select
                 type='string'
                 id='fluidRestraint'
+                style={{ width: '150px' }}
                 onChange={event => {
                   setFluidRestraint(event.target.value)
                 }}
@@ -650,7 +665,7 @@ function App() {
                 width: '10%'
               }}
             >
-              sedition score
+              sedation score
             </div>
             <div
               style={{
@@ -752,11 +767,7 @@ function App() {
                       width: '10%'
                     }}
                   >
-                    {
-                      PhysScore[
-                        physicalRestraint.indexOf(val.physicalRestraint)
-                      ]
-                    }
+                    {PhysScore[YesNo.indexOf(val.physicalRestraint)]}
                   </div>
                   <div
                     className=' border border-dark'
@@ -765,7 +776,7 @@ function App() {
                       width: '10%'
                     }}
                   >
-                    {FluidScore[fluidRestraint.indexOf(val.fluidRestraint)]}
+                    {FluidScore[YesNo.indexOf(val.fluidRestraint)]}
                   </div>
                 </div>
               </div>
