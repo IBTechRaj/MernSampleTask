@@ -2,8 +2,9 @@ import './App.css'
 import { useState } from 'react'
 import Axios from 'axios'
 
-const YesNo = ['Yes', 'No']
+const YesNo = ['', 'Yes', 'No']
 const AmbulatoryAid = [
+  '',
   'Furniture',
   'Crutches',
   'Walker',
@@ -14,16 +15,16 @@ const AmbulatoryAid = [
   'Nurse'
 ]
 
-const MentalStatus = ['Forgets Limitations', 'Oriented to Own Ability']
-const Medication = ['Under Sedation/Anesthasia', 'None']
+const MentalStatus = ['', 'Forgets Limitations', 'Oriented to Own Ability']
+const Medication = ['', 'Under Sedation/Anesthasia', 'None']
 
-const SecondScore = [15, 0]
-const AmbuScore = [30, 15, 15, 15, 0, 0, 0, 0]
-const HepaScore = [20, 0]
-const MentalScore = [15, 0]
-const MedicatnScore = [20, 0]
-const PhysScore = [10, 0]
-const FluidScore = [10, 0]
+const SecondScore = [0, 15, 0]
+const AmbuScore = [0, 30, 15, 15, 15, 0, 0, 0, 0]
+const HepaScore = [0, 20, 0]
+const MentalScore = [0, 15, 0]
+const MedicatnScore = [0, 20, 0]
+const PhysScore = [0, 10, 0]
+const FluidScore = [0, 10, 0]
 
 function App() {
   const today = new Date()
@@ -706,7 +707,7 @@ function App() {
                       width: '20%'
                     }}
                   >
-                    {SecondScore[secDiag.indexOf(val.secDiag)]}
+                    {SecondScore[YesNo.indexOf(val.secDiag)]}
                   </div>
                   <div
                     className=' border border-dark'
@@ -724,7 +725,7 @@ function App() {
                       width: '10%'
                     }}
                   >
-                    {HepaScore[heparinLock.indexOf(val.heparinLock)]}
+                    {HepaScore[YesNo.indexOf(val.heparinLock)]}
                   </div>
                   <div
                     className=' border border-dark'
@@ -742,11 +743,7 @@ function App() {
                       width: '10%'
                     }}
                   >
-                    {
-                      MedicatnScore[
-                        medicatnCondition.indexOf(val.medicatnCondition)
-                      ]
-                    }
+                    {MedicatnScore[Medication.indexOf(val.medicatnCondition)]}
                   </div>
                   <div
                     className=' border border-dark'
