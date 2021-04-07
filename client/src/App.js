@@ -152,232 +152,230 @@ function App() {
         {' '}
         P.Id: 21CR-0123 NAVEEN YADAV IP -Bed #21
       </div>
-      <div className='row mx-n5'>
+
+      <div class='row mx-md-n5  my-3 text-uppercase'>
         <div
-          className=' col-md-2  text-center text-uppercase'
+          class='col-md-2 px-md-2'
           style={{
-            height: '1 rem',
-            backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
             fontSize: 10
           }}
         >
-          clinical condition
+          <div className='p-2  text-center  border bg-secondary'>
+            clinical condition
+          </div>
         </div>
         <div
-          className=' col-md-2 px-3  text-center text-uppercase'
+          class='col-md-2 px-md-2'
           style={{
-            height: '2 rem',
-            backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
             fontSize: 10
           }}
         >
-          drug administration
+          <div className='p-2  text-center  border bg-secondary'>
+            drug administration
+          </div>
         </div>
         <div
-          className=' col-md-2  px-3 text-center text-uppercase '
+          class='col-md-2 px-md-2'
           style={{
-            height: '2 rem',
-            backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
             fontSize: 10
           }}
         >
-          clinical investigation
+          <div className='p-2  text-center  border bg-secondary'>
+            clinical investigation
+          </div>
         </div>
         <div
-          className=' col-md-2  px-3 text-center text-uppercase'
+          class='col-md-2 px-md-2'
           style={{
-            height: '2 rem',
-            backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
             fontSize: 10
           }}
         >
-          pain assessment
+          <div className='p-2  text-center  border bg-secondary'>
+            pain assessment
+          </div>
         </div>
         <div
-          className=' col-md-2 px-3 text-center text-uppercase'
+          class='col-md-2 px-md-2'
           style={{
-            height: '2 rem',
-            backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
             fontSize: 10
           }}
         >
-          m.morse fall risk
+          <div className='p-2  text-center  border bg-secondary'>
+            m.morse fall risk
+          </div>
         </div>
         <div
-          className=' col-md-2  px-3 text-center text-uppercase'
+          class='col-md-2 px-md-2'
           style={{
-            height: '2 rem',
-            backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
             fontSize: 10
           }}
         >
-          braden ulcer risk
+          <div className='p-2  text-center  border bg-secondary'>
+            braden ulcer risk
+          </div>
         </div>
-        {/* </div> */}
       </div>
 
-      <div className='row mx-n5 py-2'>
+      <div class='row mx-md-n5 my-3 text-uppercase'>
         <div
-          className=' col-md-2  text-center text-uppercase'
+          class='col-md-2 px-md-2'
           style={{
-            height: '1 rem',
-            backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
             fontSize: 10
           }}
         >
-          nursing checklist
+          <div className='p-2  text-center  border bg-secondary'>
+            nursing checklist
+          </div>
         </div>
         <div
-          className=' col-md-2 px-3  text-center text-uppercase'
+          class='col-md-2 px-md-2'
           style={{
-            height: '2 rem',
-            backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
             fontSize: 10
           }}
         >
-          nursing goals
+          <div className='p-2  text-center  border bg-secondary'>
+            nursing goals
+          </div>
         </div>
         <div
-          className=' col-md-2  px-3 text-center text-uppercase '
+          class='col-md-2 px-md-2'
           style={{
-            height: '2 rem',
-            backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
             fontSize: 10
           }}
         >
-          interdisciplinary
+          <div className='p-2  text-center  border bg-secondary'>
+            interdisciplinary
+          </div>
         </div>
         <div
-          className=' col-md-2  px-3 text-center text-uppercase'
+          class='col-md-2 px-md-2'
           style={{
-            height: '2 rem',
-            backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
             fontSize: 10
           }}
         >
-          food & nutrition
+          <div className='p-2  text-center  border bg-secondary'>
+            food & nutrition
+          </div>
         </div>
         <div
-          className=' col-md-2 px-3 text-center text-uppercase'
+          class='col-md-2 px-md-2'
           style={{
-            height: '2 rem',
-            backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
             fontSize: 10
           }}
         >
-          physiotherapy
+          <div className='p-2  text-center  border bg-secondary'>
+            physiotherapy
+          </div>
         </div>
         <div
-          className=' col-md-2  px-3 text-center text-uppercase'
+          class='col-md-2 px-md-2'
           style={{
-            height: '2 rem',
-            backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
             fontSize: 10
           }}
         >
-          in house pharmac
+          <div className='p-2  text-center  border bg-secondary'>
+            in house pharmacy
+          </div>
         </div>
-        {/* </div> */}
       </div>
 
-      <div className='row mx-n5'>
+      <div class='row mx-md-n5 my-3 text-uppercase'>
         <div
-          className=' col-md-2  text-center text-uppercase'
+          class='col-md-2 px-md-2'
           style={{
-            height: '1 rem',
-            backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
             fontSize: 10
           }}
         >
-          doctors notes
+          <div className='p-2  text-center  border bg-secondary'>
+            doctors notes
+          </div>
         </div>
         <div
-          className=' col-md-2 px-3  text-center text-uppercase'
+          class='col-md-2 px-md-2'
           style={{
-            height: '2 rem',
-            backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
             fontSize: 10
           }}
         >
-          hands off commun
+          <div className='p-2  text-center  border bg-secondary'>
+            hands off commun
+          </div>
         </div>
         <div
-          className=' col-md-2  px-3 text-center text-uppercase '
+          class='col-md-2 px-md-2'
           style={{
-            height: '2 rem',
-            backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
             fontSize: 10
           }}
         >
-          critical condition con
+          <div className='p-2  text-center  border bg-secondary'>
+            critical condition con
+          </div>
         </div>
         <div
-          className=' col-md-2  px-3 text-center text-uppercase'
+          class='col-md-2 px-md-2'
           style={{
-            height: '2 rem',
-            backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
             fontSize: 10
           }}
         >
-          patient education
+          <div className='p-2  text-center  border bg-secondary'>
+            patient education
+          </div>
         </div>
         <div
-          className=' col-md-2 px-3 text-center text-uppercase'
+          class='col-md-2 px-md-2'
           style={{
-            height: '2 rem',
-            backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
             fontSize: 10
           }}
         >
-          patient discharge
+          <div className='p-2  text-center  border bg-secondary'>
+            patient discharge
+          </div>
         </div>
         <div
-          className=' col-md-2  px-3 text-center text-uppercase'
+          class='col-md-2 px-md-2'
           style={{
-            height: '2 rem',
-            backgroundColor: 'gray',
             color: 'white',
             fontWeight: 'bold',
             fontSize: 10
           }}
         >
-          escalation & alert
+          <div className='p-2  text-center  border bg-secondary'>
+            escalation & alert
+          </div>
         </div>
-        {/* </div> */}
       </div>
 
       <div className='row row-col-12 text-uppercase text-center my-3'>
@@ -572,6 +570,7 @@ function App() {
                 Save
               </button>
             </div>
+            <div className=' col-md-2 '></div>
             <div className=' col-md-2 '></div>
             <div className=' col-md-2 '>
               <button
