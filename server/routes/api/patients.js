@@ -13,8 +13,6 @@ router.get('/', function (req, res) {
 })
 
 // @route GET api/patients
-// @description Get all patients
-// @access Public
 router.get('/patients', (req, res) => {
   Patient.find()
     .then(patients => res.json(patients))
@@ -23,18 +21,7 @@ router.get('/patients', (req, res) => {
     )
 })
 
-// @route GET api/books/:id
-// @description Get single book by id
-// @access Public
-// router.get('/:id', (req, res) => {
-//   Book.findById(req.params.id)
-//     .then(book => res.json(book))
-//     .catch(err => res.status(404).json({ nobookfound: 'No Book found' }))
-// })
-
-// @route GET api/books
-// @description add/save book
-// @access Public
+// @route POST api/patients
 router.post('/patients', (req, res) => {
   console.log(req.body)
   Patient.create(req.body)
@@ -43,25 +30,5 @@ router.post('/patients', (req, res) => {
       res.status(400).json({ error: 'Unable to add patient details' })
     )
 })
-
-// @route GET api/books/:id
-// @description Update book
-// @access Public
-// router.put('/:id', (req, res) => {
-//   Book.findByIdAndUpdate(req.params.id, req.body)
-//     .then(book => res.json({ msg: 'Updated successfully' }))
-//     .catch(err =>
-//       res.status(400).json({ error: 'Unable to update the Database' })
-//     )
-// })
-
-// @route GET api/books/:id
-// @description Delete book by id
-// @access Public
-// router.delete('/:id', (req, res) => {
-//   Book.findByIdAndRemove(req.params.id, req.body)
-//     .then(book => res.json({ mgs: 'Book entry deleted successfully' }))
-//     .catch(err => res.status(404).json({ error: 'No such a book' }))
-// })
 
 module.exports = router
