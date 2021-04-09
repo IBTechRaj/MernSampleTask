@@ -10,8 +10,7 @@ const PatientSchema = new mongoose.Schema({
     required: true
   },
   secDiag: {
-    type: String,
-    required: true
+    type: String
   },
   ambuAid: {
     type: String
