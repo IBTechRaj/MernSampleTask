@@ -32,15 +32,13 @@ function App() {
     today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds()
   const entryDate =
     today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
-  console.log('dt', entryTime, entryDate)
+
   const [secDiag, setSecDiag] = useState(0)
   const [ambuAid, setAmbuAid] = useState('')
   const [heparinLock, setHeparinLock] = useState(0)
   const [mentalStatus, setMentalStatus] = useState('')
   const [medicatnCondition, setMedicatnCondition] = useState('')
-
   const [physicalRestraint, setPhysicalRestraint] = useState(0)
-
   const [fluidRestraint, setFluidRestraint] = useState(0)
   const [patientDetails, setPatientDetails] = useState([])
 
@@ -56,7 +54,6 @@ function App() {
       physicalRestraint: physicalRestraint,
       fluidRestraint: fluidRestraint
     })
-
       .then(() => {
         getEmployees()
       })
@@ -98,6 +95,7 @@ function App() {
   return (
     <div className='container my-5'>
       <div className='row col-md-12 my-5'>
+        // Data entry guidelines for the user
         <div className='col-md-3'></div>
         <div className='col-md-9'>
           <h5>
@@ -152,7 +150,6 @@ function App() {
         {' '}
         P.Id: 21CR-0123 NAVEEN YADAV IP -Bed #21
       </div>
-
       <div class='row mx-md-n5  my-3 text-uppercase'>
         <div
           class='col-md-2 px-md-2'
@@ -227,7 +224,6 @@ function App() {
           </div>
         </div>
       </div>
-
       <div class='row mx-md-n5 my-3 text-uppercase'>
         <div
           class='col-md-2 px-md-2'
@@ -302,7 +298,6 @@ function App() {
           </div>
         </div>
       </div>
-
       <div class='row mx-md-n5 my-3 text-uppercase'>
         <div
           class='col-md-2 px-md-2'
@@ -377,7 +372,6 @@ function App() {
           </div>
         </div>
       </div>
-
       <div className='row row-col-12 text-uppercase text-center my-3'>
         <div
           style={{
@@ -391,7 +385,7 @@ function App() {
           modified morse fall risk assessment
         </div>
       </div>
-
+      //Data entry form
       <div className='row row-col-12  text-uppercase'>
         <form className='container' id='patient-form'>
           <div className='row my-3'>
@@ -429,7 +423,6 @@ function App() {
                 type='string'
                 id='secDiag'
                 style={{ width: '150px' }}
-                // width='100px'
                 onChange={event => {
                   setSecDiag(event.target.value)
                 }}
@@ -581,8 +574,6 @@ function App() {
                 Reset
               </button>
             </div>
-
-            {/* </div> */}
           </div>
         </form>
       </div>
@@ -594,7 +585,6 @@ function App() {
           {' '}
           modified morse fall risk assessment
         </p>
-
         <div className='row row-col-12 text-uppercase text-center'>
           <div
             style={{
@@ -686,6 +676,7 @@ function App() {
             </div>
           </div>
         </div>
+        // Display data fetched from db
         {patientDetails.map((val, key) => {
           return (
             <div className='employee'>
