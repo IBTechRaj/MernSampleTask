@@ -1,0 +1,9 @@
+Please implement this feature
+
+Create UI as specified, create the associated dB table and create read n write operation...
+
+First create this using React & Mysql 
+
+Then try with Mongodb
+
+Please record how many hours you took to implement
