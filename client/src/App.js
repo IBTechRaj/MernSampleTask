@@ -95,7 +95,6 @@ function App() {
   return (
     <div className='container my-5'>
       <div className='row col-md-12 my-5'>
-        // Data entry guidelines for the user
         <div className='col-md-3'></div>
         <div className='col-md-9'>
           <h5>
@@ -385,7 +384,6 @@ function App() {
           modified morse fall risk assessment
         </div>
       </div>
-      //Data entry form
       <div className='row row-col-12  text-uppercase'>
         <form className='container' id='patient-form'>
           <div className='row my-3'>
@@ -676,7 +674,6 @@ function App() {
             </div>
           </div>
         </div>
-        // Display data fetched from db
         {patientDetails.map((val, key) => {
           return (
             <div className='employee'>
